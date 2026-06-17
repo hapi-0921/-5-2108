@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\bin\x64\Debug\Game.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\BasicPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\BasicVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\LambertPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\LambertVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\ShapeRendererPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\ShapeRendererVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\PrimitiveRendererPS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\PrimitiveRendererVS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\SpritePS.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\2250404\Desktop\チーム制作５回目\Data\Shader\SpriteVS.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
