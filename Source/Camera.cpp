@@ -58,5 +58,4 @@ void Camera::SetPerspectiveFov(float fovY, float aspect, float nearZ, float farZ
 	//画角(fov)、画面比率(aspect)、クリップ距離(near,far)からプロジェクション行列を作成
 	DirectX::XMMATRIX Projection = DirectX::XMMatrixPerspectiveFovLH(fovY, aspect, nearZ, farZ);
 	DirectX::XMStoreFloat4x4(&projection, Projection);
-	int A;
 }

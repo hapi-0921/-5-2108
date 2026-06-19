@@ -46,6 +46,7 @@ private:
 	};
 private:
 	Model* model = nullptr;
+	Model* wall_mdl = nullptr;
 	Wall wall[4];
 	CameraController camera;
 
