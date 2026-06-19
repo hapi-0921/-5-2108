@@ -1,22 +1,2 @@
 ﻿  DirectXTexUtil.cpp
-  BC.cpp
-  BC4BC5.cpp
-  BC6HBC7.cpp
-  BCDirectCompute.cpp
-  DirectXTexCompress.cpp
-  DirectXTexCompressGPU.cpp
-  DirectXTexConvert.cpp
-  DirectXTexD3D11.cpp
-  DirectXTexDDS.cpp
-  DirectXTexFlipRotate.cpp
-  DirectXTexHDR.cpp
-  DirectXTexImage.cpp
-  DirectXTexMipMaps.cpp
-  DirectXTexMisc.cpp
-  DirectXTexNormalMaps.cpp
-  DirectXTexPMAlpha.cpp
-  DirectXTexResize.cpp
-  DirectXTexTGA.cpp
-  DirectXTexWIC.cpp
-  コードを生成中...
-  DirectXTex_Desktop_2022.vcxproj -> C:\Users\2250404\Desktop\チーム制作５回目\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
+C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\DirectXTexUtil.cpp(1,1): error C1090: PDB API の呼び出しに失敗しました。エラー コード '3': C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.pdb
