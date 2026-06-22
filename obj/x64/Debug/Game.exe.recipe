@@ -2,39 +2,39 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\2250052\Desktop\original\bin\x64\Debug\Game.exe</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\bin\x64\Debug\Game.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\BasicPS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\BasicPS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\BasicVS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\BasicVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\LambertPS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\LambertPS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\LambertVS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\LambertVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\ShapeRendererPS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\ShapeRendererPS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\ShapeRendererVS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\ShapeRendererVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\PrimitiveRendererPS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\PrimitiveRendererPS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\PrimitiveRendererVS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\PrimitiveRendererVS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\SpritePS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\SpritePS.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\2250052\Desktop\original\Data\Shader\SpriteVS.cso</FullPath>
+      <FullPath>C:\Users\2250052\Desktop\team2_1\-5-2108\Data\Shader\SpriteVS.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

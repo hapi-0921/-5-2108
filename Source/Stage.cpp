@@ -71,8 +71,7 @@ void Stage::FrontWall()
 	DirectX::XMVECTOR cameraPos = DirectX::XMLoadFloat3(&eye);
 
 	// 部屋中心 → カメラ
-	DirectX::XMVECTOR cameraDir =
-		DirectX::XMVector3Normalize(
+	DirectX::XMVECTOR cameraDir =DirectX::XMVector3Normalize(
 			DirectX::XMVectorSubtract(cameraPos,roomCenter));
 
 	for (int i = 0; i < 4; i++)
@@ -97,26 +96,24 @@ void Stage::FrontWall()
 		}
 	);
 
-	const float EPS = 0.0001f;
+	const float EPS = 0.3f;
 
 	if (fabs(distances[1].distance - distances[2].distance) < EPS)
 	{
-		// 特殊ケース：一番前だけ消す
+		// 1枚消す
 		for (int i = 0; i < 4; i++)
 		{
 			wall[distances[i].index].isFrontWall = false;
 		}
-
 		wall[distances[0].index].isFrontWall = true;
 	}
 	else
 	{
-		// 通常：上位2枚消す
+		// 2枚消す
 		for (int i = 0; i < 4; i++)
 		{
 			wall[distances[i].index].isFrontWall = false;
 		}
-
 		wall[distances[0].index].isFrontWall = true;
 		wall[distances[1].index].isFrontWall = true;
 	}
