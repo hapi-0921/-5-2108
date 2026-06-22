@@ -15,7 +15,7 @@
 //#define COLOR_WEIGHTS
 //#define COLOR_AVG_0WEIGHTS
 
-#include "BC.h"
+#include "BC.h"6
 
 using namespace DirectX;
 using namespace DirectX::PackedVector;
