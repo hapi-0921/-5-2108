@@ -1,5 +1,10 @@
-﻿  DirectXTexUtil.cpp
+﻿cl : コマンド ライン  warning D9002: 不明なオプション '/Zc:__cplusplus/FS' を無視します。
   BC.cpp
+<<<<<<< HEAD
+C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\BC.cpp(18,10): warning C4067: プリプロセッサ ディレクティブの後に余分な文字がありました - 改行が必要です
+  (ソース ファイル '/BC.cpp' をコンパイルしています)
+  
+=======
   BC4BC5.cpp
   BC6HBC7.cpp
   BCDirectCompute.cpp
@@ -19,4 +24,5 @@
   DirectXTexTGA.cpp
   DirectXTexWIC.cpp
   コードを生成中...
-  DirectXTex_Desktop_2022.vcxproj -> C:\Users\2250404\Desktop\チーム制作５回目\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
+>>>>>>> yamamoto
+  DirectXTex_Desktop_2022.vcxproj -> C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
