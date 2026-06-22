@@ -1,6 +1,4 @@
-﻿cl : コマンド ライン  warning D9002: 不明なオプション '/Zc:__cplusplus/FS' を無視します。
-  DirectXTexUtil.cpp
-cl : コマンド ライン  warning D9002: 不明なオプション '/Zc:__cplusplus/FS' を無視します。
+﻿  DirectXTexUtil.cpp
   BC.cpp
   BC4BC5.cpp
   BC6HBC7.cpp
@@ -21,4 +19,4 @@ cl : コマンド ライン  warning D9002: 不明なオプション '/Zc:__cplu
   DirectXTexTGA.cpp
   DirectXTexWIC.cpp
   コードを生成中...
-  DirectXTex_Desktop_2022.vcxproj -> C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
+  DirectXTex_Desktop_2022.vcxproj -> C:\Users\2250052\Desktop\original\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
