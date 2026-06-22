@@ -17,6 +17,18 @@ Stage::Stage()
 	wall[FRONT_L].position = { 0,0,0 };
 	wall[BACK_R].position= {-300,0,-300};
 	wall[BACK_L].position = { 0,0,-300 };
+
+	wall[FRONT_R].normal = { -1, 0, 0 };
+	wall[FRONT_L].normal = { 1, 0, 0 };
+	wall[BACK_R].normal = { 0, 0, -1 };
+	wall[BACK_L].normal = { 0, 0, 1 };
+
+
+	wallCenter[FRONT_L] = { -75,  0, -75 };
+	wallCenter[FRONT_R] = { -225, 0, -75 };
+
+	wallCenter[BACK_L] = { -75,  0, -225 };
+	wallCenter[BACK_R] = { -225, 0, -225 };
 }
 Stage::~Stage()
 {
@@ -41,40 +53,72 @@ void Stage::Update(float elapsedTime)
 
 void Stage::FrontWall()
 {
-	//壁を二枚透明化（一枚だけを追加実装）
-	struct WallDistance
-	{
-		int index;
-		float distance;
-	};
+	if (camera == nullptr)	return;
 
-	std::vector<WallDistance> distances;
+
+	distances.clear();
+	for (int i = 0; i < 4; i++)
+	{
+		wall[i].isFrontWall = false;
+	}
+
+	// 部屋の中心
+	DirectX::XMFLOAT3 roomCenterPos = { -150,0,-150 };
+	DirectX::XMVECTOR roomCenter = DirectX::XMLoadFloat3(&roomCenterPos);
+
+	// カメラ位置
+	DirectX::XMFLOAT3 eye = camera->GetCameraEye();
+	DirectX::XMVECTOR cameraPos = DirectX::XMLoadFloat3(&eye);
+
+	// 部屋中心 → カメラ
+	DirectX::XMVECTOR cameraDir =
+		DirectX::XMVector3Normalize(
+			DirectX::XMVectorSubtract(cameraPos,roomCenter));
 
 	for (int i = 0; i < 4; i++)
 	{
-		//カメラとの距離
-		wall[i].distance.z = wall[i].position.z - camera.GetCameraTarget().z;
-		distances.push_back({ i, wall[i].distance.z });
+		DirectX::XMVECTOR center = DirectX::XMLoadFloat3(&wallCenter[i]);
+
+		// 部屋中心 → 壁中心
+		DirectX::XMVECTOR wallDir =DirectX::XMVector3Normalize(
+			DirectX::XMVectorSubtract(center,roomCenter));
+
+
+		float dot =DirectX::XMVectorGetX(
+				DirectX::XMVector3Dot(cameraDir,wallDir));
+
+		distances.push_back({ i, dot });
 	}
 
-	//距離を比較
-	std::sort(distances.begin(), distances.end(),
-		[](const WallDistance& a, const WallDistance& b)
+	std::sort(distances.begin(),distances.end(),
+		[](const WallDistance& a,const WallDistance& b)
 		{
-			return a.distance < b.distance;
-		});
-
-	for (int rank = 0; rank < 4; rank++)
-	{
-		wall[distances[rank].index].frontNum = rank + 1;
-	}
-
-	for (int i = 0; i < 4; i++)
-	{
-		if (wall[i].frontNum == 1 || wall[i].frontNum == 2)
-		{
-			wall[i].isFrontWall = true;
+			return a.distance > b.distance;
 		}
+	);
+
+	const float EPS = 0.0001f;
+
+	if (fabs(distances[1].distance - distances[2].distance) < EPS)
+	{
+		// 特殊ケース：一番前だけ消す
+		for (int i = 0; i < 4; i++)
+		{
+			wall[distances[i].index].isFrontWall = false;
+		}
+
+		wall[distances[0].index].isFrontWall = true;
+	}
+	else
+	{
+		// 通常：上位2枚消す
+		for (int i = 0; i < 4; i++)
+		{
+			wall[distances[i].index].isFrontWall = false;
+		}
+
+		wall[distances[0].index].isFrontWall = true;
+		wall[distances[1].index].isFrontWall = true;
 	}
 }
 
@@ -120,8 +164,20 @@ void Stage::DrawDebugGUI()
 				wall[i].angle.z = DirectX::XMConvertToRadians(a.z);
 				//スケール
 				ImGui::InputFloat3("Scale", &wall[i].scale.x);
+
 			}
 		}
+		ImGui::Text("0 : %d", wall[0].isFrontWall);
+		ImGui::Text("1 : %d", wall[1].isFrontWall);
+		ImGui::Text("2 : %d", wall[2].isFrontWall);
+		ImGui::Text("3 : %d", wall[3].isFrontWall);
+
+		DirectX::XMFLOAT3 eye = camera->GetCameraEye();
+
+		ImGui::Text("eye.x = %.1f", eye.x);
+		ImGui::Text("eye.z = %.1f", eye.z);
+
+		ImGui::Text("angle.y = %.3f", camera->GetCameraAngle().y);
 	}
 	ImGui::End();
 

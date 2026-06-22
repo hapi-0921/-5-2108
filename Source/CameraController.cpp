@@ -4,6 +4,7 @@
 
 #include"CameraController.h"
 #include"Camera.h"
+#include <algorithm>
 
 //更新処理
 void CameraController::Update(float elapsedTime)
@@ -15,7 +16,7 @@ void CameraController::Update(float elapsedTime)
 	{
 		float dx = static_cast<float>(
 			mouse.GetPositionX() - mouse.GetOldPositionX());
-
+  
 		float dy = static_cast<float>(
 			mouse.GetPositionY() - mouse.GetOldPositionY());
 
@@ -38,13 +39,12 @@ void CameraController::Update(float elapsedTime)
 	}
 
 	//======回転の制限======
-	//ｘ軸
-	if (angle.x < minAngleX) {
-		angle.x = minAngleX;
-	}
-	if (angle.x > maxAngleX) {
-		angle.x = maxAngleX;
-	}
+	//x軸
+	angle.x = std::clamp(
+		angle.x,
+		-DirectX::XM_PIDIV2 + 0.01f,
+		DirectX::XM_PIDIV2 - 0.01f
+	);
 	//ｙ軸
 	if (angle.y < -DirectX::XM_PI) {
 		angle.y += DirectX::XM_2PI;
@@ -66,7 +66,7 @@ void CameraController::Update(float elapsedTime)
 	//＊制作用
 	{
 		//中ドラッグで平行移動
-		//if (mouse.GetButton() & Mouse::BTN_MIDDLE)
+		//if (mouse.GetButton() & Mouse::BTN_LEFT)
 		//{
 		//	float dx = static_cast<float>(
 		//		mouse.GetPositionX() - mouse.GetOldPositionX());
@@ -80,7 +80,6 @@ void CameraController::Update(float elapsedTime)
 		//}
 	}
 
-		DirectX::XMFLOAT3 eye;
 		eye.x = target.x - front.x * range;
 		eye.y = target.y - front.y * range;
 		eye.z = target.z - front.z * range;
@@ -105,7 +104,7 @@ void CameraController::DrawDebugGUI()
 			//位置
 			ImGui::InputFloat3("target", &target.x);
 			//ズーム
-			ImGui::InputFloat3("range", &range);
+			ImGui::InputFloat("range", &range);
 			//回転
 			DirectX::XMFLOAT3 a;
 			a.x = DirectX::XMConvertToDegrees(angle.x);

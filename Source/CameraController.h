@@ -15,21 +15,22 @@ public:
 
 private:
 
-	//‰ñ“]Šp“x§ŒÀ
-	float maxAngleX = DirectX::XMConvertToRadians(45);
-	float minAngleX = DirectX::XMConvertToRadians(-45);
-
 	//‹——£§ŒÀ
 	float minRange = 630.0f;
 	float maxRange = 1500.0f;
 
-
-	DirectX::XMFLOAT3 target = { 0,0,0 };//’‹“_
+	DirectX::XMFLOAT3 target = { -150,0,-150 };//’‹“_
 	DirectX::XMFLOAT3 angle = { 0,0,0 };//‰ñ“]Šp“x
+	DirectX::XMFLOAT3 eye;
+
 	float rollSpeed = DirectX::XMConvertToRadians(90);//‰ñ“]‘¬“x
-	float range = maxRange;//‹——£
+
 
 public:
 	DirectX::XMFLOAT3 GetCameraTarget() { return target; }
+	DirectX::XMFLOAT3 GetCameraAngle() { return angle; }
+	DirectX::XMFLOAT3 GetCameraEye() { return eye; }
+
+	float range = maxRange;//‹——£
 
 };

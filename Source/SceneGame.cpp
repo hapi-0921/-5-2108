@@ -26,6 +26,9 @@ void SceneGame::Initialize()
 	);
 
 	cameraController = new CameraController();
+
+	stage = new Stage();
+	stage->SetCamera(cameraController);
 }
 
 // I—¹‰»
