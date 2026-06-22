@@ -4,27 +4,19 @@
 
 #include"CameraController.h"
 #include"Camera.h"
+#include <algorithm>
 
 //更新処理
 void CameraController::Update(float elapsedTime)
 {
 	Mouse& mouse = Input::Instance().GetMouse();
-	GamePad& gamePad = Input::Instance().GetGamePad();
 
-	float ax = gamePad.GetAxisLX();
-	float ay = gamePad.GetAxisLY();
-
-	float mouseRotateSpeed = 0.01f;
-
-	angle.y += ax * mouseRotateSpeed;
-	angle.x += ay * mouseRotateSpeed;
-
-	//左ドラッグで回転
-	if (mouse.GetButton() & Mouse::BTN_LEFT)
+	//中ドラッグで回転
+	if (mouse.GetButton() & Mouse::BTN_MIDDLE)
 	{
 		float dx = static_cast<float>(
 			mouse.GetPositionX() - mouse.GetOldPositionX());
-
+  
 		float dy = static_cast<float>(
 			mouse.GetPositionY() - mouse.GetOldPositionY());
 
@@ -36,17 +28,7 @@ void CameraController::Update(float elapsedTime)
 
 	//ホイールで拡大・縮小
 	float wheel = ImGui::GetIO().MouseWheel;
-	range -= wheel * 15;
-
-	if (GetAsyncKeyState('L'))
-	{
-		range -= 10.0f;//ズーム
-	}
-	else
-	{
-		range += 15.0f;
-	}
-
+	range -= wheel * 70;
 
 	//========ズームの制限=======
 	if (range < minRange) {
@@ -56,21 +38,13 @@ void CameraController::Update(float elapsedTime)
 		range = maxRange;
 	}
 
-	//カメラの回転速度
-	float speed = rollSpeed * elapsedTime;
-
-	//スティックの入力値に合わせてX軸とY軸を回転
-	angle.x += ay * speed;
-	angle.y += ax * speed;
-
 	//======回転の制限======
-	//ｘ軸
-	if (angle.x < minAngleX) {
-		angle.x = minAngleX;
-	}
-	if (angle.x > maxAngleX) {
-		angle.x = maxAngleX;
-	}
+	//x軸
+	angle.x = std::clamp(
+		angle.x,
+		-DirectX::XM_PIDIV2 + 0.01f,
+		DirectX::XM_PIDIV2 - 0.01f
+	);
 	//ｙ軸
 	if (angle.y < -DirectX::XM_PI) {
 		angle.y += DirectX::XM_2PI;
@@ -92,7 +66,7 @@ void CameraController::Update(float elapsedTime)
 	//＊制作用
 	{
 		//中ドラッグで平行移動
-		//if (mouse.GetButton() & Mouse::BTN_MIDDLE)
+		//if (mouse.GetButton() & Mouse::BTN_LEFT)
 		//{
 		//	float dx = static_cast<float>(
 		//		mouse.GetPositionX() - mouse.GetOldPositionX());
@@ -106,7 +80,6 @@ void CameraController::Update(float elapsedTime)
 		//}
 	}
 
-		DirectX::XMFLOAT3 eye;
 		eye.x = target.x - front.x * range;
 		eye.y = target.y - front.y * range;
 		eye.z = target.z - front.z * range;
@@ -131,7 +104,7 @@ void CameraController::DrawDebugGUI()
 			//位置
 			ImGui::InputFloat3("target", &target.x);
 			//ズーム
-			ImGui::InputFloat3("range", &range);
+			ImGui::InputFloat("range", &range);
 			//回転
 			DirectX::XMFLOAT3 a;
 			a.x = DirectX::XMConvertToDegrees(angle.x);
@@ -141,8 +114,7 @@ void CameraController::DrawDebugGUI()
 			angle.x = DirectX::XMConvertToRadians(a.x);
 			angle.y = DirectX::XMConvertToRadians(a.y);
 			angle.z = DirectX::XMConvertToRadians(a.z);
-			int L;
-			int N;
+
 
 		}
 	}

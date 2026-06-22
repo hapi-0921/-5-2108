@@ -4,4 +4,5 @@ C:\Users\2250052\Desktop\ゲープロⅢ\ゲームプログラミングⅢ_B\デ
 C:\Users\2250052\Desktop\1年\後期\ゲープロⅢ\ゲームプログラミングⅢ_B\データ最新\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
 C:\Users\2250052\Desktop\main\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
 C:\Users\2250052\Desktop\team2_2\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
-C:\Users\2250404\Desktop\チーム制作５回目\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
+C:\Users\2250052\Desktop\original\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
+C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
