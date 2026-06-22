@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ﻿     ライブラリ bin\x64\Debug\Game.lib とオブジェクト bin\x64\Debug\Game.exp を作成中
 =======
 ﻿  Stage.cpp
 >>>>>>> yamamoto
   Game.vcxproj -> C:\Users\2250052\Desktop\team2_1\-5-2108\bin\x64\Debug\Game.exe
+=======
+﻿  Game.vcxproj -> C:\Users\2250052\Desktop\team2_1\-5-2108\bin\x64\Debug\Game.exe
+>>>>>>> yamamoto

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿cl : コマンド ライン  warning D9002: 不明なオプション '/Zc:__cplusplus/FS' を無視します。
   BC.cpp
 <<<<<<< HEAD
@@ -7,22 +8,10 @@ C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\BC.cpp(18,10): warn
 =======
   BC4BC5.cpp
   BC6HBC7.cpp
+=======
+﻿  BC.cpp
+>>>>>>> yamamoto
   BCDirectCompute.cpp
-  DirectXTexCompress.cpp
-  DirectXTexCompressGPU.cpp
-  DirectXTexConvert.cpp
-  DirectXTexD3D11.cpp
-  DirectXTexDDS.cpp
-  DirectXTexFlipRotate.cpp
-  DirectXTexHDR.cpp
-  DirectXTexImage.cpp
-  DirectXTexMipMaps.cpp
-  DirectXTexMisc.cpp
-  DirectXTexNormalMaps.cpp
-  DirectXTexPMAlpha.cpp
-  DirectXTexResize.cpp
-  DirectXTexTGA.cpp
-  DirectXTexWIC.cpp
   コードを生成中...
 >>>>>>> yamamoto
   DirectXTex_Desktop_2022.vcxproj -> C:\Users\2250052\Desktop\team2_1\-5-2108\External\DirectXTex\Bin\Desktop_2022\x64\Debug\DirectXTex.lib
